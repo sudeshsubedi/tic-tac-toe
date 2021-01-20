@@ -1,0 +1,262 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Game2.gd" type="Script" id=1]
+[ext_resource path="res://assets/background.png" type="Texture" id=2]
+[ext_resource path="res://CellTopLeft.gd" type="Script" id=3]
+[ext_resource path="res://assets/tick.png" type="Texture" id=4]
+[ext_resource path="res://assets/circle.png" type="Texture" id=5]
+[ext_resource path="res://CellTopCenter.gd" type="Script" id=6]
+[ext_resource path="res://CellTopRight.gd" type="Script" id=7]
+[ext_resource path="res://CellCenterLeft.gd" type="Script" id=8]
+[ext_resource path="res://CellCenterCenter.gd" type="Script" id=9]
+[ext_resource path="res://CellCenterRight.gd" type="Script" id=10]
+[ext_resource path="res://CellDownLeft.gd" type="Script" id=11]
+[ext_resource path="res://CellDownCenter.gd" type="Script" id=12]
+[ext_resource path="res://CellDownRight.gd" type="Script" id=13]
+[ext_resource path="res://assets/fonts/ARCADE_I.TTF" type="DynamicFontData" id=14]
+[ext_resource path="res://assets/fonts/ARCADE_R.TTF" type="DynamicFontData" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_color = Color( 0.0392157, 0.0235294, 0.0235294, 1 )
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 14 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 250.904, 246.75 )
+texture = ExtResource( 2 )
+
+[node name="VerticalLineOne" type="Line2D" parent="."]
+position = Vector2( 133, 0 )
+points = PoolVector2Array( -3, 0, -3, 130, -3, 300, -3, 420 )
+width = 3.0
+default_color = Color( 0.972549, 0.85098, 0.203922, 1 )
+texture_mode = 102846128
+
+[node name="VerticalLineTwo" type="Line2D" parent="."]
+position = Vector2( 266, 0 )
+points = PoolVector2Array( -3, 0, -3, 130, -3, 300, -3, 420 )
+width = 3.0
+default_color = Color( 0.972549, 0.85098, 0.203922, 1 )
+texture_mode = 102846128
+
+[node name="HorizontalLineOne" type="Line2D" parent="."]
+position = Vector2( 0, 133 )
+rotation = -1.5708
+points = PoolVector2Array( -3, 0, -3, 130, -3, 300, -3, 420 )
+width = 3.0
+default_color = Color( 0.972549, 0.85098, 0.203922, 1 )
+texture_mode = 102846128
+
+[node name="HorizontalLineTwo" type="Line2D" parent="."]
+position = Vector2( 0, 266 )
+rotation = -1.5708
+points = PoolVector2Array( -3, 0, -3, 130, -3, 300, -3, 420 )
+width = 3.0
+default_color = Color( 0.972549, 0.85098, 0.203922, 1 )
+texture_mode = 102846128
+
+[node name="Grid" type="Node" parent="."]
+
+[node name="CellTopLeft" type="Node" parent="Grid"]
+script = ExtResource( 3 )
+
+[node name="Tick" type="Sprite" parent="Grid/CellTopLeft"]
+visible = false
+position = Vector2( 66.5, 66.5 )
+texture = ExtResource( 4 )
+
+[node name="Circle" type="Sprite" parent="Grid/CellTopLeft"]
+visible = false
+position = Vector2( 66.5, 66.5 )
+texture = ExtResource( 5 )
+
+[node name="CellTopCenter" type="Node" parent="Grid"]
+script = ExtResource( 6 )
+
+[node name="Tick" type="Sprite" parent="Grid/CellTopCenter"]
+visible = false
+position = Vector2( 199.5, 66.5 )
+texture = ExtResource( 4 )
+
+[node name="Circle" type="Sprite" parent="Grid/CellTopCenter"]
+visible = false
+position = Vector2( 199.5, 66.5 )
+texture = ExtResource( 5 )
+
+[node name="CellTopRight" type="Node" parent="Grid"]
+script = ExtResource( 7 )
+
+[node name="Tick" type="Sprite" parent="Grid/CellTopRight"]
+visible = false
+position = Vector2( 332.5, 66.5 )
+texture = ExtResource( 4 )
+
+[node name="Circle" type="Sprite" parent="Grid/CellTopRight"]
+visible = false
+position = Vector2( 332.5, 66.5 )
+texture = ExtResource( 5 )
+
+[node name="CellCenterLeft" type="Node" parent="Grid"]
+script = ExtResource( 8 )
+
+[node name="Tick" type="Sprite" parent="Grid/CellCenterLeft"]
+visible = false
+position = Vector2( 66.5, 199.5 )
+texture = ExtResource( 4 )
+
+[node name="Circle" type="Sprite" parent="Grid/CellCenterLeft"]
+visible = false
+position = Vector2( 66.5, 199.5 )
+texture = ExtResource( 5 )
+
+[node name="CellCenterCenter" type="Node" parent="Grid"]
+script = ExtResource( 9 )
+
+[node name="Tick" type="Sprite" parent="Grid/CellCenterCenter"]
+visible = false
+position = Vector2( 199.5, 199.5 )
+texture = ExtResource( 4 )
+
+[node name="Circle" type="Sprite" parent="Grid/CellCenterCenter"]
+visible = false
+position = Vector2( 199.5, 199.5 )
+texture = ExtResource( 5 )
+
+[node name="CellCenterRight" type="Node" parent="Grid"]
+script = ExtResource( 10 )
+
+[node name="Tick" type="Sprite" parent="Grid/CellCenterRight"]
+visible = false
+position = Vector2( 332.5, 199.5 )
+texture = ExtResource( 4 )
+
+[node name="Circle" type="Sprite" parent="Grid/CellCenterRight"]
+visible = false
+position = Vector2( 332.5, 199.5 )
+texture = ExtResource( 5 )
+
+[node name="CellDownLeft" type="Node" parent="Grid"]
+script = ExtResource( 11 )
+
+[node name="Tick" type="Sprite" parent="Grid/CellDownLeft"]
+visible = false
+position = Vector2( 66.5, 332.5 )
+texture = ExtResource( 4 )
+
+[node name="Circle" type="Sprite" parent="Grid/CellDownLeft"]
+visible = false
+position = Vector2( 66.5, 332.5 )
+texture = ExtResource( 5 )
+
+[node name="CellDownCenter" type="Node" parent="Grid"]
+script = ExtResource( 12 )
+
+[node name="Tick" type="Sprite" parent="Grid/CellDownCenter"]
+visible = false
+position = Vector2( 199.5, 332.5 )
+texture = ExtResource( 4 )
+
+[node name="Circle" type="Sprite" parent="Grid/CellDownCenter"]
+visible = false
+position = Vector2( 199.5, 332.5 )
+texture = ExtResource( 5 )
+
+[node name="CellDownRight" type="Node" parent="Grid"]
+script = ExtResource( 13 )
+
+[node name="Tick" type="Sprite" parent="Grid/CellDownRight"]
+visible = false
+position = Vector2( 332.5, 332.5 )
+texture = ExtResource( 4 )
+
+[node name="Circle" type="Sprite" parent="Grid/CellDownRight"]
+visible = false
+position = Vector2( 332.5, 332.5 )
+texture = ExtResource( 5 )
+
+[node name="StartScreen" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Title" type="Label" parent="StartScreen"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 371.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 1 )
+text = "Tic Tac Toe"
+align = 1
+autowrap = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartScreen"]
+anchor_right = 0.25
+margin_left = 80.0
+margin_top = 160.0
+margin_right = 323.0
+margin_bottom = 270.0
+
+[node name="StartButton" type="Button" parent="StartScreen/VBoxContainer"]
+margin_right = 243.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+text = "Start"
+
+[node name="ExitButton" type="Button" parent="StartScreen/VBoxContainer"]
+margin_top = 43.0
+margin_right = 243.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 2 )
+text = "Exit"
+
+[node name="EndScreen" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Message" type="Label" parent="EndScreen"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 371.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+autowrap = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndScreen"]
+anchor_right = 0.25
+margin_left = 40.0
+margin_top = 160.0
+margin_right = 362.0
+margin_bottom = 242.0
+
+[node name="PlayAgainButton" type="Button" parent="EndScreen/VBoxContainer"]
+margin_right = 322.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 2 )
+text = "Play again"
+
+[node name="ExitButton" type="Button" parent="EndScreen/VBoxContainer"]
+margin_top = 43.0
+margin_right = 322.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 2 )
+text = "Exit"
+[connection signal="pressed" from="StartScreen/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="StartScreen/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="EndScreen/VBoxContainer/PlayAgainButton" to="." method="_on_PlayAgainButton_pressed"]
+[connection signal="pressed" from="EndScreen/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
